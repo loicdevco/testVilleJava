@@ -4,8 +4,12 @@ public class Sdz1 {
 
 	public static void main(String[] args) {
 		Ville v = new Ville();
-		Ville v1 = new Ville("Marseille", 123456, "France");
-		Ville v2 = new Ville("Rio", 987654, "Brésil");
+		Ville v1 = new Ville("Marseille", 1236, "France");
+		Ville v2 = new Ville("Rio", 321654, "Brésil");
+
+		// Affiche le résultat du nombre d'instance de la classe Ville
+		System.out.println("Le nombre d'instances de la classe ville est : " + Ville.nbreInstances);
+		System.out.println("Le nombre d'instances de la classe ville est : " + Ville.getNombreInstancesBis());
 
 		System.out.println("\n v = " + v.getNom() + " ville de " + v.getNbreHabitants() + " habitants se situant en "
 				+ v.getNomPays());
@@ -39,6 +43,15 @@ public class Sdz1 {
 				+ v1.getNomPays());
 		System.out.println(" v1 = " + v2.getNom() + " ville de " + v2.getNbreHabitants() + " habitants se situant en "
 				+ v2.getNomPays() + "\n\n");
+
+		/*
+		 * Test de la fonctionnalite this avec la categorie des villes
+		 */
+
+		System.out.println("\n\n" + v1.decrisToi());
+		System.out.println(v.decrisToi());
+		System.out.println(v2.decrisToi() + "\n\n");
+		System.out.println(v1.comparer(v2));
 	}
 
 }
