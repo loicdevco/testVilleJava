@@ -2,17 +2,17 @@ package testVilleJava;
 
 public class Ville {
 
-	private String nomVille; // stock le nom de la ville
-	private String nomPays; // stock le nom du pays
-	private int nbreHabitants; // stock le nombre d'habitants
-	private char categorie; // stocke la categorie (apprentissage du this)
+	protected String nomVille; // stock le nom de la ville
+	protected String nomPays; // stock le nom du pays
+	protected int nbreHabitants; // stock le nombre d'habitants
+	protected char categorie; // stocke la categorie (apprentissage du this)
 
 	// Différentes variables de class
 
 	// variables public qui comptent le nombre d'instance
 	public static int nbreInstances = 0;
 	// variables public qui comptent le nombre d'instance
-	private static int nbreInstancesbis = 0;
+	protected static int nbreInstancesbis = 0;
 
 	// ici je place notre constructeur par defaut //
 	public Ville() {
@@ -83,7 +83,7 @@ public class Ville {
 	}
 
 	// Définir la categorie de la ville en fonction du nombre d'habitants
-	private void setCategorie() {
+	protected void setCategorie() {
 
 		int bornesSuperieures[] = { 0, 1000, 10000, 100000, 500000, 1000000, 5000000, 10000000 };
 		char categories[] = { '?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
@@ -110,6 +110,11 @@ public class Ville {
 			str = this.nomVille + " est une ville plus peuplée que " + v1.getNom();
 
 		return str;
+	}
+
+	public String toString() {
+		return "\t" + this.nomVille + " est une ville de " + this.nomPays + ", elle comporte : " + this.nbreHabitants
+				+ " => elle est donc de categorie : " + this.categorie;
 	}
 
 	public static int getNombreInstancesBis() {
